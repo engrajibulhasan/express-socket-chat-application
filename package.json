@@ -1,0 +1,24 @@
+{
+  "name": "express-socket-chat-application",
+  "version": "1.0.0",
+  "description": "Chat Application using MERN but React will add later",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engrajibulhasan/express-socket-chat-application.git"
+  },
+  "keywords": [
+    "Express",
+    "Mongoose",
+    "Socket.io"
+  ],
+  "author": "Md. Rajibul Hasan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/engrajibulhasan/express-socket-chat-application/issues"
+  },
+  "homepage": "https://github.com/engrajibulhasan/express-socket-chat-application#readme"
+}
