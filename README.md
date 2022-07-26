@@ -1,5 +1,6 @@
 # express-socket-chat-application
-This application created using Express, Socket.io, Mongo DB with Template engine Ejs 
+This application was created using Express, Socket.io, Mongoose with Template engine Ejs 
+
 
 ## Framework
 - Express Js
