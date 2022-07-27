@@ -6,7 +6,10 @@ const path=require("path");
 const cookieParser = require("cookie-parser");
 
 // Internal Import
-const { notFoundErrorHandler, defaultErrorHandler }=require('./middlewares/common/errorHandler')
+const { notFoundErrorHandler, defaultErrorHandler }=require('./middlewares/common/errorHandler');
+const login=require("./router/login");
+const inbox=require("./router/inbox");
+const users=require("./router/users");
 
 const app=express();
 dotenv.config();
@@ -33,6 +36,9 @@ app.use(express.static(path.join(__dirname,"public")))
 app.set("view engine","ejs")
 
 //Router setup
+app.use('/',login );
+app.use('/users',users);
+app.use('/inbox',inbox);
 
 //404 Not_FOUND Error handler
 app.use(notFoundErrorHandler);
