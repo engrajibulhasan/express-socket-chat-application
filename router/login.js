@@ -3,8 +3,10 @@ const express=require("express");
 
 // Internal Module
 const { getLogin } = require("../controllers/loginController");
+const { templateVariables } = require("../middlewares/common/templateVariables");
 const router=express.Router();
 
-router.get('/',getLogin);
+//With custom Middleware
+router.get('/', templateVariables('Login'), getLogin);
 
 module.exports=router;
