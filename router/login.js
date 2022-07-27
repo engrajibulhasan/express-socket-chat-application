@@ -1,8 +1,10 @@
+// External Module
 const express=require("express");
+
+// Internal Module
+const { getLogin } = require("../controllers/loginController");
 const router=express.Router();
 
-router.get('/',(req,res)=>{
-    res.send('Login page')
-})
+router.get('/',getLogin);
 
 module.exports=router;
