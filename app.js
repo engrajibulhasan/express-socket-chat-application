@@ -1,8 +1,12 @@
+// External Import
 const express = require("express");
 const dotenv=require("dotenv");
 const mongoose=require("mongoose");
 const path=require("path");
 const cookieParser = require("cookie-parser");
+
+// Internal Import
+const { notFoundErrorHandler, defaultErrorHandler }=require('./middlewares/common/errorHandler')
 
 const app=express();
 dotenv.config();
@@ -27,6 +31,20 @@ app.use(express.static(path.join(__dirname,"public")))
 
 //  Set view Engine
 app.set("view engine","ejs")
+
+//Router setup
+
+//404 Not_FOUND Error handler
+app.use(notFoundErrorHandler);
+
+
+//Default Error handler
+app.use(defaultErrorHandler)
+
+//App listen
+app.listen(process.env.PORT,()=>{
+    console.log(`App listening to port ${process.env.PORT}`)
+})
 
 
 
