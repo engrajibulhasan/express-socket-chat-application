@@ -35,5 +35,5 @@ const peopleSchema=mongoose.Schema(
     }
 );
 
-const People=mongoose.models("People",peopleSchema);
+const People=mongoose.model("People",peopleSchema);
 module.exports=People;
