@@ -24,7 +24,7 @@ This application was created using Express, Socket.io, Mongoose with Template en
 
 ----
 
-####userSchema
+#### userSchema
 I have named it ```peopleSchema``` because of smooth Hostinh issue. It I named it users, then it may couse error while hosting in remote free hosting.
 
 ```javascript
