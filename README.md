@@ -22,3 +22,47 @@ This application was created using Express, Socket.io, Mongoose with Template en
 - bcrypt (Password Hash)
 - http-errors (Error creation)
 
+----
+
+####userSchema
+I have named it ```peopleSchema``` because of smooth Hostinh issue. It I named it users, then it may couse error while hosting in remote free hosting.
+
+```javascript
+const peopleSchema=mongoose.Schema(
+    {
+        name:{
+            type:String,
+            required:true,
+            trim:true
+        },
+        email:{
+            type:String,
+            required:true,
+            trim:true,
+            lowercase:true
+        },
+        mobile:{
+            type:String,
+            required:true,
+        },
+        password:{
+            type:String,
+            required:true,
+        },
+        avatar:{
+            type:String,
+        },
+        role:{
+            type:String,
+            enum:["admin","user"],
+            default:"user"
+        }
+    },
+    {
+        timestamps:true
+    }
+);
+```
+
+
+
