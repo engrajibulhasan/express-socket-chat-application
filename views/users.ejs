@@ -41,15 +41,20 @@
           <h2>Create New User</h2>
         </div>
         <div class="modal-body">
-          <form id="add-user-form">
+          <form 
+          id="add-user-form"
+          actions="/users"
+          method="post"
+          enctype="multipart/form-data"
+
+          >
             <input type="text" placeholder="enter name" name="name" />
-            <p class="error show">This is error</p>
+            <p class="error"></p>
             <input type="text" placeholder="enter email" name="email" />
+            <p class="error"></p>
             <input type="text" placeholder="enter mobile" name="mobile" />
-            <input
-              type="password"
-              placeholder="enter password"
-              name="password"
+            <p class="error"></p>
+            <input type="password" placeholder="enter password"  name="password"
             />
             <input type="file" name="avatar" />
             <input type="submit" value="Submit" />
