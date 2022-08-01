@@ -45,7 +45,7 @@
           id="add-user-form"
           actions="/users"
           method="post"
-     
+          enctype="multipart/form-data"
 
           >
             <input type="text" placeholder="enter name" name="name" />
@@ -57,8 +57,8 @@
             <input type="password" placeholder="enter password"  name="password"
             />
             <p class="error password-error"></p>
-            <!-- <input type="file" name="avatar" />
-            <p class="error avatar-error"></p> -->
+            <input type="file" name="avatar" />
+            <p class="error avatar-error"></p>
             <p class="error common-error"></p>
             <input type="submit" value="Submit" />
           </form>

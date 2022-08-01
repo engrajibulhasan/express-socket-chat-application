@@ -1,8 +1,9 @@
 const { check, validationResult } = require("express-validator");
 const createHttpError = require("http-errors");
 const users=require('../../models/People');
-const {path}=require("path");
+const path=require("path");
 const {unlink}=require("fs");
+console.log("Comes in User Validor");
 const userValidator=[
     check('name').isLength({min:1}).withMessage('Name is required').isAlpha('en-US',{ignore:'-'}).withMessage('Only alphabet allowed').trim(),
     check('email').isEmail().withMessage('Valid email address required').trim().custom(
@@ -35,9 +36,11 @@ const userValidator=[
 ];
 
 const userValidationHandler=(req,res,next)=>{
+    console.log("Comes in User Validor Handler");
     const errors=validationResult(req);
     const mappedErrors=errors.mapped();
     if(Object.keys(mappedErrors).length===0){
+        console.log("no error");
         next()
     }else{
         // Remove uploaded FIle

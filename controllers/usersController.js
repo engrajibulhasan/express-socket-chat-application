@@ -1,20 +1,22 @@
-const bcrypt=require("bcrypt")
+const bcrypt=require("bcrypt");
+const Users = require("../models/People");
 const getUsers=(req,res,next)=>{
     res.render('users')
 }
 
 async function addUser(req,res,next){
+    console.log("Comes in Add user");
     let newUser;
     // Password hash
     const hashedPassword=await bcrypt.hash(req.body.password,10);
     if(req.files && req.files.length>0){
-        newUser=new User({
+        newUser=new Users({
             ...req.body,
             avatar:req.files[0].filename,
             password:hashedPassword
         })
     }else{
-        newUser=new User({
+        newUser=new Users({
             ...req.body,
             password:hashedPassword
         })

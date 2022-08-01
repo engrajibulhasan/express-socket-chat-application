@@ -1,6 +1,6 @@
 const createHttpError = require("http-errors");
 const multer = require("multer");
-
+const path=require("path")
 const uploader=(
     subfolder_path,
     allowed_file_types,
