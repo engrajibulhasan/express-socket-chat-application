@@ -14,6 +14,10 @@ const router=express.Router();
 router.get('/',templateVariables('Users'),getUsers)
 
 // Create New User
-router.post('/',avatarUpload,userValidator,userValidationHandler,addUser )
+router.post('/',(req,res)=>{
+    console.log(req.body,"req");
+    res.json(req.body)
+})
+// router.post('/',avatarUpload,userValidator,userValidationHandler,addUser )
 
 module.exports=router;

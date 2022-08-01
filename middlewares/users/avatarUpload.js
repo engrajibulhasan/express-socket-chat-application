@@ -1,6 +1,7 @@
 const uploader = require("../../utils/singleUploader");
 
 const avatarUpload=(req,res,next)=>{
+    console.log(req,"Request found step one");
     const upload=uploader(
         'avatars', //Upload Directory folder
         ['image/jpg','image/jpeg','image/png'], //Allowed File Types

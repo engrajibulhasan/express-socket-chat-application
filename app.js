@@ -4,6 +4,7 @@ const dotenv=require("dotenv");
 const mongoose=require("mongoose");
 const path=require("path");
 const cookieParser = require("cookie-parser");
+var bodyParser = require('body-parser');
 
 // Internal Import
 const { notFoundErrorHandler, defaultErrorHandler }=require('./middlewares/common/errorHandler');
@@ -24,7 +25,14 @@ mongoose.connect(process.env.DB_URI,{
 
 // request parser
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+// for parsing application/xwww-
+// app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(express.urlencoded())
+
+app.post('/',(req,res)=>{
+    console.log(req.body,"request accepted");
+    res.send(req.body)
+})
 
 //Parse cookies - Signed cookie
 app.use(cookieParser(process.env.COOKIE_SECRET))
