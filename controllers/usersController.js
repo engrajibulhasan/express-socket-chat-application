@@ -32,7 +32,7 @@ async function addUser(req,res,next){
         res.status(500).json({
             errors:{
                 common:{
-                    msg:"unknown error cooured while adding into database"
+                    msg:"Unknown error cooured while adding into database!"
                 }
             }
         })
